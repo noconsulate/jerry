@@ -5,8 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    contract: '0xA8EBe3499Eb847Cb013b2bef8991bAF1d7161651',
-    privateKey: 'f159aac4d11be65f592238b8de1a90ced4018d4adeccd2bdac166bd6926fb686',
+    contract: '0x4da84Aef2f2e3d7C1cc15614eD487a2F534Fefe9',
+    privateKey: '90243b35b0d38d72280d2bf53071bc2c596cfd45f4e7a9905d2056bac0a163bf',
   },
   mutations: {
   },

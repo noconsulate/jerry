@@ -1,7 +1,9 @@
 const Web3 = require('web3');
-const Jerry = require('../../abi/Jerry.js')
+import  Jerry  from '../../../jerryContract/build/contracts/Jerry.json'
 
-const address = '0xA8EBe3499Eb847Cb013b2bef8991bAF1d7161651'
+console.log(Jerry.abi);
+
+const address = '0x4da84Aef2f2e3d7C1cc15614eD487a2F534Fefe9'
 
 async function initWeb3() {
   const web3 = await new Web3('http://localhost:7545')
@@ -9,7 +11,9 @@ async function initWeb3() {
 }
 
 async function loadContract(obj) {
-  const contract = await new obj.eth.Contract(Jerry, address)
+  const contract = await new obj.eth.Contract(
+    Jerry.abi, address
+    )
   return contract
 }
 
