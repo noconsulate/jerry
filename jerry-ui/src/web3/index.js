@@ -1,9 +1,7 @@
 const Web3 = require('web3');
-import  Jerry  from '../../../jerryContract/build/contracts/Jerry.json'
+import  Jerry  from '../../../jerry-contract/build/contracts/Jerry.json'
 
-console.log(Jerry.abi);
-
-const address = '0x4da84Aef2f2e3d7C1cc15614eD487a2F534Fefe9'
+const address = '0x60bEDa0dd9a2CcE2f26ED14f4e8652cFf018638d'
 
 async function initWeb3() {
   const web3 = await new Web3('http://localhost:7545')
