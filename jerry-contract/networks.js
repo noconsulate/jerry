@@ -1,6 +1,6 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-
-const KEY = "2e938e892252b01ec379943c70eea13c65c21feea8099f0fac528244ea88b69c"
+const KEY = process.env.ROPSTEN_PRIVATE_KEY
+const PROVIDER_URL = process.env.INFURA_ROPSTEN
 
 module.exports = {
   networks: {
@@ -15,7 +15,7 @@ module.exports = {
     ropsten: {
       provider: () =>
         new HDWalletProvider({
-          providerOrUrl: process.env.INFURA_ROPSTEN,
+          providerOrUrl: PROVIDER_URL,
           privateKeys: [KEY],
         }),
       networkId: 3,
