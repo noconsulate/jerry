@@ -4,6 +4,7 @@
   "description": "",
   "main": "networks.js",
   "dependencies": {
+    "@openzeppelin/contracts-ethereum-package": "^3.0.0",
     "@truffle/hdwallet-provider": "^1.1.0"
   },
   "devDependencies": {},
