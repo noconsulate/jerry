@@ -1,6 +1,6 @@
 const Web3 = require("web3");
 import Jerry from "../../../jerry-contract/build/contracts/Jerry.json";
-import { ROPSTEN_URL, PRIVATE_KEY } from "../../../secrets.json";
+import { ROPSTEN_URL, PRIVATE_KEY } from "../../secrets.json";
 
 console.log(ROPSTEN_URL);
 const address = "0x43e0eeC2f9d5d8cfB8Eca8427598bf04184f9450";

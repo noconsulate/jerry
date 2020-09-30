@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { PRIVATE_KEY } from '../../../secrets.json'
+import { PRIVATE_KEY } from '../../secrets.json'
 
 Vue.use(Vuex)
 
