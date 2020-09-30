@@ -16,12 +16,15 @@
       placeholder="change multiplier">
       <button @click="sendMultiplier">send</button>
     </div>
+    <div id="element">
+      <button @click="doTheThing">do thing</button>
+    </div>
   </div>
 </template>
 
 <script>
 import InfoDisplay from "./components/InfoDisplay"
-import { getValue, getAccounts, getProduct, storeValue, changeMultiplier, } from './web3'
+import { getValue, getAccounts, getProduct, storeValue, changeMultiplier, doThing} from './web3'
 export default {
   name: 'App',
   components: {
@@ -47,6 +50,9 @@ export default {
     }
   },
   methods: {
+    doTheThing() {
+      doThing(this.inputValue)
+    },
     fetchData() {
       getValue(this.account)
         .then(res => {
