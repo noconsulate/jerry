@@ -1,5 +1,2 @@
 !!! TO-DO !!!
 
-tests
-try with upgradable contract (should work fine)
-import ABI properly so changes are incorporated automatically
