@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { PRIVATE_KEY } from '../../../secrets.json'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    contract: '0x4da84Aef2f2e3d7C1cc15614eD487a2F534Fefe9',
-    privateKey: '90243b35b0d38d72280d2bf53071bc2c596cfd45f4e7a9905d2056bac0a163bf',
+    contract: '0x43e0eeC2f9d5d8cfB8Eca8427598bf04184f9450',
+    privateKey: PRIVATE_KEY,
   },
   mutations: {
   },

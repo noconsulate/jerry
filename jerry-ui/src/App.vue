@@ -70,7 +70,7 @@ export default {
   },
   created: function () {
     let accounts = getAccounts()
-      .then(res => this.account = res[0])
+      .then(res => this.account = res)
 
     this.fetchData()
   }
