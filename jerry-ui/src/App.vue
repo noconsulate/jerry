@@ -3,7 +3,10 @@
     <h3>private key</h3>
     {{ privateKey }}
     <h3>contract address</h3>
-    {{ contract }}
+    <a 
+     href="https://ropsten.etherscan.io/address/0x43e0eec2f9d5d8cfb8eca8427598bf04184f9450"
+     target="_blank"
+    >{{contract}} </a>
     <info-display
       :value="value"
       :product="product" />
