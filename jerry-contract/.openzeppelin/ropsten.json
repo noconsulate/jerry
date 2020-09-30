@@ -1,0 +1,14 @@
+{
+  "contracts": {},
+  "solidityLibs": {},
+  "proxies": {
+    "jerry/Jerry": [
+      {
+        "address": "0x43e0eeC2f9d5d8cfB8Eca8427598bf04184f9450",
+        "kind": "NonProxy",
+        "bytecodeHash": "f9f0dc9ceec1500a877ccf8c7a4c946f04d2f5405567f6370b53ccc987f9d5c0"
+      }
+    ]
+  },
+  "manifestVersion": "2.2"
+}
