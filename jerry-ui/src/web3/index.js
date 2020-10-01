@@ -3,7 +3,7 @@ import Jerry from "../../../jerry-contract/build/contracts/Jerry.json";
 import { ROPSTEN_URL, PRIVATE_KEY } from "../../secrets.json";
 
 console.log(ROPSTEN_URL);
-const address = "0x43e0eeC2f9d5d8cfB8Eca8427598bf04184f9450";
+const address = "0x3c1567DB79E39c38b0f0d63184AfA8Ff0f1D57EB";
 
 async function initWeb3() {
   const web3 = await new Web3(ROPSTEN_URL);

@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    contract: '0x43e0eeC2f9d5d8cfB8Eca8427598bf04184f9450',
+    contract: '0x3c1567DB79E39c38b0f0d63184AfA8Ff0f1D57EB',
     privateKey: PRIVATE_KEY,
   },
   mutations: {
