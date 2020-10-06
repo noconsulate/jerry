@@ -76,26 +76,6 @@ export async function getProduct() {
 
   return response;
 }
-export async function doThing(value) {
-  let web3 = await initWeb3();
-  let contract = await loadContract(web3);
-
-  const transaction = contract.methods.storeValue(value);
-
-  const block = await web3.eth.getBlock("latest");
-  const gasLimit = block.gasLimit;
-  const gasPrice = await web3.eth.getGasPrice();
-  console.log(gasPrice);
-
-  const options = {
-    to: transaction._parent._address,
-    data: transaction.encodeABI(),
-    gas: gasLimit,
-    gasPrice: gasPrice * 2,
-  };
-  const signed = await web3.eth.accounts.signTransaction(options, PRIVATE_KEY);
-  console.log(signed);
-}
 export async function storeValue(value) {
   let web3 = await initWeb3();
   let contract = await loadContract(web3);
