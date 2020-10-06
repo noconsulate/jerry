@@ -3,34 +3,40 @@
     <h3>private key</h3>
     {{ privateKey }}
     <h3>contract address</h3>
-    <a 
-     href="https://ropsten.etherscan.io/address/0x43e0eec2f9d5d8cfb8eca8427598bf04184f9450"
-     target="_blank"
-    >{{contract}} </a>
+    <a
+      href="https://ropsten.etherscan.io/address/0x43e0eec2f9d5d8cfb8eca8427598bf04184f9450"
+      target="_blank"
+      >{{ contract }}
+    </a>
     <info-display
       :value="value"
-      :product="product" 
-      :transaction="transaction" />
+      :product="product"
+      :transaction="transaction"
+    />
     <div id="element">
-      <input v-model="inputValue" placeholder="change value">
+      <input v-model="inputValue" placeholder="change value" />
       <button @click="sendValue">send</button>
     </div>
     <div id="element">
-      <input v-model="multiplierValue"
-      placeholder="change multiplier">
+      <input v-model="multiplierValue" placeholder="change multiplier" />
       <button @click="sendMultiplier">send</button>
     </div>
   </div>
 </template>
 
 <script>
-import InfoDisplay from "./components/InfoDisplay"
-import { getValue, getAccounts, getProduct, storeValue, changeMultiplier, } from './web3'
+import InfoDisplay from "./components/InfoDisplay";
+import {
+  getValue,
+  getAccounts,
+  getProduct,
+  storeValue,
+  changeMultiplier,
+} from "./web3";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     "info-display": InfoDisplay,
-
   },
   computed: {
     privateKey() {
@@ -42,46 +48,39 @@ export default {
   },
   data() {
     return {
-      account: '',
-      value: '',
-      multiplier: '',
-      product: '',
-      inputValue: '',
-      multiplierValue: '',
-      transaction: '',
-    }
+      account: "",
+      value: "",
+      multiplier: "",
+      product: "",
+      inputValue: "",
+      multiplierValue: "",
+      transaction: "check developer's console",
+    };
   },
   methods: {
     fetchData() {
-      getValue(this.account)
-        .then(res => {
-          this.value = res
-        })
-      getProduct(this.account)
-        .then(res => this.product = res)
+      getValue(this.account).then((res) => {
+        this.value = res;
+      });
+      getProduct(this.account).then((res) => (this.product = res));
     },
     sendValue() {
-      storeValue(this.inputValue, this.account)
-        .then( res => {
-          this.transaction = res
-          this.fetchData()
-        })
+      storeValue(this.inputValue, this.account).then((res) => {
+        this.fetchData();
+      });
     },
     sendMultiplier() {
-      changeMultiplier(this.multiplierValue, this.account)
-        .then(res => {
-          this.transaction = receipt;
-          this.fetchData();
-        })
-    }
+      changeMultiplier(this.multiplierValue, this.account).then((res) => {
+        this.fetchData();
+      });
+    },
   },
-  created: function () {
-    let accounts = getAccounts()
-      .then(res => this.account = res)
+  created: function() {
+    let accounts = getAccounts().then((res) => (this.account = res));
 
-    this.fetchData()
-  }
-}
+    this.fetchData();
+  },
+};
 </script>
 
 <style>
