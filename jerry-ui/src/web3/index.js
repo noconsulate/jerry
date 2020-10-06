@@ -5,9 +5,6 @@ import { ROPSTEN_URL, PRIVATE_KEY } from "../../secrets.json";
 console.log(ROPSTEN_URL);
 const address = "0x43e0eeC2f9d5d8cfB8Eca8427598bf04184f9450";
 
-const mode = process.env.chainServer
-console.log(mode);
-
 async function initWeb3() {
   const web3 = await new Web3(ROPSTEN_URL);
   return web3;
