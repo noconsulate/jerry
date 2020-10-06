@@ -9,7 +9,8 @@
     >{{contract}} </a>
     <info-display
       :value="value"
-      :product="product" />
+      :product="product" 
+      :transaction="transaction" />
     <div id="element">
       <input v-model="inputValue" placeholder="change value">
       <button @click="sendValue">send</button>
@@ -19,15 +20,12 @@
       placeholder="change multiplier">
       <button @click="sendMultiplier">send</button>
     </div>
-    <div id="element">
-      <button @click="doTheThing">do thing</button>
-    </div>
   </div>
 </template>
 
 <script>
 import InfoDisplay from "./components/InfoDisplay"
-import { getValue, getAccounts, getProduct, storeValue, changeMultiplier, doThing} from './web3'
+import { getValue, getAccounts, getProduct, storeValue, changeMultiplier, } from './web3'
 export default {
   name: 'App',
   components: {
@@ -49,13 +47,11 @@ export default {
       multiplier: '',
       product: '',
       inputValue: '',
-      multiplierValue: ''
+      multiplierValue: '',
+      transaction: '',
     }
   },
   methods: {
-    doTheThing() {
-      doThing(this.inputValue)
-    },
     fetchData() {
       getValue(this.account)
         .then(res => {
@@ -67,12 +63,14 @@ export default {
     sendValue() {
       storeValue(this.inputValue, this.account)
         .then( res => {
+          this.transaction = res
           this.fetchData()
         })
     },
     sendMultiplier() {
       changeMultiplier(this.multiplierValue, this.account)
         .then(res => {
+          this.transaction = receipt;
           this.fetchData();
         })
     }

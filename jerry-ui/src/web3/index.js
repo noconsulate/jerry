@@ -41,14 +41,7 @@ async function sendTx(web3, transaction) {
 }
 
 export async function getAccounts() {
-  // let web3 = await initWeb3();
-  // let accounts = await web3.eth.getAccounts()
-  // console.log(accounts);
-  // return accounts
-
   let web3 = await initWeb3();
-  // let account = web3.eth.accounts.privateKeyToAccount(PRIVATE_KEY)
-  // console.log(account);
 
   web3.eth.accounts.wallet.add(PRIVATE_KEY);
   const account = web3.eth.accounts.wallet[0].address;
@@ -109,6 +102,7 @@ export async function storeValue(value) {
   const transaction = contract.methods.storeValue(value);
 
   const receipt = await sendTx(web3, transaction);
+  console.log('storeValue() receipt');
   return receipt;
 }
 
